@@ -205,7 +205,7 @@ impl Channel {
     #[cfg(feature = "model")]
     #[inline]
     pub fn messages<F>(&self, f: F) -> Result<Vec<Message>>
-        where F: FnOnce(GetMessages) -> GetMessages {
+        where F: FnOnce(&GetMessages) -> &GetMessages {
         self.id().messages(f)
     }
 

@@ -193,7 +193,7 @@ impl Group {
     /// [Read Message History]: permissions/constant.READ_MESSAGE_HISTORY.html
     #[inline]
     pub fn messages<F>(&self, f: F) -> Result<Vec<Message>>
-        where F: FnOnce(GetMessages) -> GetMessages {
+        where F: FnOnce(&GetMessages) -> &GetMessages {
         self.channel_id.messages(f)
     }
 
